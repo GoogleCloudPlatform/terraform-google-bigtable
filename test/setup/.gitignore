@@ -1,2 +1,8 @@
 terraform.tfvars
 source.sh
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
