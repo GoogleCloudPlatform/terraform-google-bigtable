@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 resource "google_bigtable_instance" "instance" {
   name                = var.name
   display_name        = var.display_name

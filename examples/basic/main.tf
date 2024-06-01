@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 module "bigtable" {
-  source       = "./.."
+  source       = "googlestaging/bigtable/google"
   project      = var.project
   name         = "bigtable-tf1"
   display_name = "bigtable-tf1"
