@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 resource "google_bigtable_instance" "instance" {
   name                = var.name
   display_name        = var.display_name
-  project             = var.project
+  project             = var.project_id
   deletion_protection = var.deletion_protection
 
   dynamic "cluster" {
@@ -49,7 +48,7 @@ resource "google_bigtable_instance" "instance" {
 
 resource "google_bigtable_table" "table" {
   for_each                = var.tables
-  project                 = var.project
+  project                 = var.project_id
   name                    = each.value.table_name
   instance_name           = google_bigtable_instance.instance.name
   split_keys              = each.value.split_keys

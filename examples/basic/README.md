@@ -7,11 +7,15 @@ This example illustrates how to use the `bigtable` module.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| project | The ID of the project in which to provision resources. | `string` | n/a | yes |
+| project\_id | The ID of the project in which to provision resources. | `string` | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| instance\_id | n/a |
+| instance\_name | n/a |
+| instance\_type | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

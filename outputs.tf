@@ -14,3 +14,14 @@
  * limitations under the License.
  */
 
+output "instance_name" {
+  value = google_bigtable_instance.instance.name
+}
+
+output "instance_id" {
+  value = google_bigtable_instance.instance.id
+}
+
+output "instance_type" {
+  value = google_bigtable_instance.instance.instance_type
+}

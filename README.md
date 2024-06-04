@@ -56,14 +56,18 @@ Functional examples are included in the
 | display\_name | The human-readable display name of the Bigtable instance. Defaults to the instance name | `string` | n/a | yes |
 | labels | labels associated to the Bigtable instance. | `map(string)` | `{}` | no |
 | name | The unique name of the Bigtable instance. | `string` | n/a | yes |
-| project | The ID of the project in which the resource belongs | `string` | n/a | yes |
+| project\_id | The ID of the project in which the resource belongs | `string` | n/a | yes |
 | storage\_type | The storage type to use. One of SSD or HDD. Defaults to SSD | `string` | `"SSD"` | no |
 | tables | Tables to created in the Bigtable instance. | <pre>map(object({<br>    table_name              = string<br>    split_keys              = optional(list(string))<br>    deletion_protection     = optional(string)<br>    change_stream_retention = optional(number)<br>    column_family = optional(map(object({<br>      family = string<br>      }))<br>    )<br>  }))</pre> | `{}` | no |
 | zones | Zones of the Bigtable cluster. | <pre>map(object({<br>    zone         = string<br>    cluster_id   = string<br>    num_nodes    = optional(number)<br>    kms_key_name = optional(string)<br>    autoscaling_config = optional(object({<br>      min_nodes      = number<br>      max_nodes      = number<br>      cpu_target     = number<br>      storage_target = optional(number)<br>    }))<br>  }))</pre> | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| instance\_id | n/a |
+| instance\_name | n/a |
+| instance\_type | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

@@ -23,17 +23,17 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSimpleExample(t *testing.T) {
-	example := tft.NewTFBlueprintTest(t)
+func TestBigTableInstance(t *testing.T) {
+	bt_ins := tft.NewTFBlueprintTest(t)
 
-	example.DefineVerify(func(assert *assert.Assertions) {
-		example.DefaultVerify(assert)
+	bt_ins.DefineVerify(func(assert *assert.Assertions) {
+		bt_ins.DefaultVerify(assert)
 
-		projectID := example.GetStringOutput("project_id")
+		projectID := bt_ins.GetStringOutput("project_id")
 		services := gcloud.Run(t, "services list", gcloud.WithCommonArgs([]string{"--project", projectID, "--format", "json"})).Array()
 
-		match := utils.GetFirstMatchResult(t, services, "config.name", "storage.googleapis.com")
-		assert.Equal("ENABLED", match.Get("state").String(), "storage service should be enabled")
+		match := utils.GetFirstMatchResult(t, services, "config.name", "bigtable.googleapis.com")
+		assert.Equal("ENABLED", match.Get("state").String(), "bigtable service should be enabled")
 	})
-	example.Test()
+	bt_ins.Test()
 }

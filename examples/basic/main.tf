@@ -15,7 +15,7 @@
  */
 module "bigtable" {
   source       = "googlestaging/bigtable/google"
-  project      = var.project
+  project_id   = var.project_id
   name         = "bigtable-tf1"
   display_name = "bigtable-tf1"
   storage_type = "HDD"

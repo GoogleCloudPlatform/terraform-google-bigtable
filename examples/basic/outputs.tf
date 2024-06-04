@@ -14,3 +14,14 @@
  * limitations under the License.
  */
 
+output "instance_name" {
+  value = module.bigtable.instance_name
+}
+
+output "instance_id" {
+  value = module.bigtable.instance_id
+}
+
+output "instance_type" {
+  value = module.bigtable.instance_type
+}
