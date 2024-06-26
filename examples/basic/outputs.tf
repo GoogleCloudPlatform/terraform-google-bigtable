@@ -21,7 +21,3 @@ output "instance_name" {
 output "instance_id" {
   value = module.bigtable.instance_id
 }
-
-output "instance_type" {
-  value = module.bigtable.instance_type
-}

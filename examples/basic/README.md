@@ -15,7 +15,6 @@ This example illustrates how to use the `bigtable` module.
 |------|-------------|
 | instance\_id | n/a |
 | instance\_name | n/a |
-| instance\_type | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

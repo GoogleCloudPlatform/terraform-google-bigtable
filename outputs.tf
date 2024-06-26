@@ -21,7 +21,3 @@ output "instance_name" {
 output "instance_id" {
   value = google_bigtable_instance.instance.id
 }
-
-output "instance_type" {
-  value = google_bigtable_instance.instance.instance_type
-}

@@ -13,6 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+locals {
+  gc_policy_map = { for obj in flatten([
+    for k, table_config in var.tables : [
+      for k, v in table_config.column_family : {
+        table_name         = table_config.table_name
+        column_family_name = v.family
+        gc_rules           = v.gc_rules
+      } if v.gc_rules != null
+    ] if table_config != null && table_config.column_family != null
+    ]) : "${var.name}:${obj.table_name}:${obj.column_family_name}" => obj
+  }
+}
+
 resource "google_bigtable_instance" "instance" {
   name                = var.name
   display_name        = var.display_name
@@ -64,4 +78,20 @@ resource "google_bigtable_table" "table" {
       family = column_family.value["family"]
     }
   }
+}
+
+resource "google_bigtable_gc_policy" "policy" {
+  for_each      = local.gc_policy_map
+  instance_name = google_bigtable_instance.instance.name
+  project       = var.project_id
+  table         = each.value.table_name
+  column_family = each.value.column_family_name
+
+  /*
+    Setting ABANDON allows the resource to be abandoned rather than deleted.
+    This is useful for GC policy as it cannot be deleted in a replicated instance
+  */
+  deletion_policy = length(var.zones) > 1 ? "ABANDON" : ""
+  gc_rules        = each.value.gc_rules
+  depends_on      = [google_bigtable_table.table]
 }
