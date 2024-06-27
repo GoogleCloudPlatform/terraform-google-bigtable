@@ -43,8 +43,9 @@ Functional examples are included in the
 
 | Name | Description |
 |------|-------------|
-| instance\_id | n/a |
-| instance\_name | n/a |
+| instance\_id | Bigtable instance id |
+| instance\_name | Bigtable instance name |
+| table\_ids | List of table being provisioned |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

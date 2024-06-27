@@ -95,3 +95,4 @@ resource "google_bigtable_gc_policy" "policy" {
   gc_rules        = each.value.gc_rules
   depends_on      = [google_bigtable_table.table]
 }
+

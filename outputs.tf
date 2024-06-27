@@ -15,9 +15,20 @@
  */
 
 output "instance_name" {
-  value = google_bigtable_instance.instance.name
+  value       = google_bigtable_instance.instance.name
+  description = "Bigtable instance name"
 }
 
 output "instance_id" {
-  value = google_bigtable_instance.instance.id
+  value       = google_bigtable_instance.instance.id
+  description = "Bigtable instance id"
 }
+
+output "table_ids" {
+  value = [
+    for table in google_bigtable_table.table :
+    table.id
+  ]
+  description = "List of table being provisioned"
+}
+

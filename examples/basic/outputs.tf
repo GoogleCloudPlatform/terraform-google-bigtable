@@ -15,9 +15,16 @@
  */
 
 output "instance_name" {
-  value = module.bigtable.instance_name
+  value       = module.bigtable.instance_name
+  description = "Bigtable instance name"
 }
 
 output "instance_id" {
-  value = module.bigtable.instance_id
+  value       = module.bigtable.instance_id
+  description = "Bigtable instance id"
+}
+
+output "table_ids" {
+  value       = module.bigtable.table_ids
+  description = "List of table being provisioned"
 }
