@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2024 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package multiple_buckets
+package bigtable_resource
 
 import (
 	"testing"
@@ -30,10 +30,10 @@ func TestBigTableInstance(t *testing.T) {
 		bt_ins.DefaultVerify(assert)
 
 		projectID := bt_ins.GetStringOutput("project_id")
-		services := gcloud.Run(t, "services list", gcloud.WithCommonArgs([]string{"--project", projectID, "--format", "json"})).Array()
-
-		match := utils.GetFirstMatchResult(t, services, "config.name", "bigtable.googleapis.com")
-		assert.Equal("ENABLED", match.Get("state").String(), "bigtable service should be enabled")
+		instanceID := bt_ins.GetStringOutput("instance_id")
+		ins_cmd := gcloud.Run(t, "bigtable instances describe", gcloud.WithCommonArgs([]string{instanceID, "--project", projectID, "--format", "json"}))
+		
+		assert.Equal(instanceID, ins_cmd.Get("name").String(), fmt.Sprintf("Bigtable instance ID mismatch. Instance is not created successfully."))
 	})
 	bt_ins.Test()
 }
