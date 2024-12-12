@@ -58,4 +58,5 @@ module "bigtable" {
       }
     }
   }
+  deletion_protection = false
 }
