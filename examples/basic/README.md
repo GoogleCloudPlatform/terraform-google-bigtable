@@ -15,6 +15,7 @@ This example illustrates how to use the `bigtable` module.
 |------|-------------|
 | instance\_id | Bigtable instance id |
 | instance\_name | Bigtable instance name |
+| project\_id | Project ID |
 | table\_ids | List of table being provisioned |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
