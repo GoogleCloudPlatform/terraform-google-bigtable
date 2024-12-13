@@ -28,7 +28,7 @@ func TestBigTableInstance(t *testing.T) {
 	bt_ins.DefineVerify(func(assert *assert.Assertions) {
 		bt_ins.DefaultVerify(assert)
 
-		projectID := bt_ins.GetStringOutput("project_id")
+		projectID := bt_ins.GetTFSetupStringOutput("project_id")
 		instanceID := bt_ins.GetStringOutput("instance_id")
 		ins_cmd := gcloud.Run(t, "bigtable instances describe", gcloud.WithCommonArgs([]string{instanceID, "--project", projectID, "--format", "json"}))
 		assert.Equal(instanceID, ins_cmd.Get("name").String(), "Bigtable instance ID mismatch. Instance is not created successfully.")

@@ -29,9 +29,10 @@ module "bigtable" {
       "cluster_id" = "cluster2"
       "zone"       = "us-east1-b"
       "autoscaling_config" = {
-        "min_nodes"  = 1
-        "max_nodes"  = 3
-        "cpu_target" = 50
+        "min_nodes"      = 1
+        "max_nodes"      = 3
+        "cpu_target"     = 50
+        "storage_target" = 8192
       }
     }
   }
