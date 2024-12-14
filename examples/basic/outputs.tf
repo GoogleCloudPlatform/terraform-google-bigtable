@@ -28,8 +28,3 @@ output "table_ids" {
   value       = module.bigtable.table_ids
   description = "List of table being provisioned"
 }
-
-output "project_id" {
-  value       = var.project_id
-  description = "Project ID"
-}
