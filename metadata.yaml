@@ -93,10 +93,15 @@ spec:
     outputs:
       - name: instance_id
         description: Bigtable instance id
+        type: string
       - name: instance_name
         description: Bigtable instance name
+        type: string
       - name: table_ids
         description: List of table being provisioned
+        type:
+          - tuple
+          - - string
   requirements:
     roles:
       - level: Project

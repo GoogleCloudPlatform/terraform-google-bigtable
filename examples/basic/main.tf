@@ -15,6 +15,7 @@
  */
 module "bigtable" {
   source       = "GoogleCloudPlatform/bigtable/google"
+  version      = "0.1.0"
   project_id   = var.project_id
   name         = "bigtable-tf1"
   display_name = "bigtable-tf1"
