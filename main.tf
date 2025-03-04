@@ -65,6 +65,14 @@ resource "google_bigtable_table" "table" {
       family = column_family.value["family"]
     }
   }
+
+  dynamic "automated_backup_policy" {
+    for_each = each.value.automated_backup_policy != null ? [each.value.automated_backup_policy] : []
+    content {
+      retention_period = automated_backup_policy.value.retention_period
+      frequency        = automated_backup_policy.value.frequency
+    }
+  }
 }
 
 
