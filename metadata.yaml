@@ -71,7 +71,28 @@ spec:
                 storage_target = optional(number)
               }))
             }))
-        required: true
+        defaultValue:
+          zone1:
+            autoscaling_config:
+              cpu_target: 60
+              max_nodes: 2
+              min_nodes: 1
+            cluster_id: cluster1
+            zone: us-central1-a
+          zone2:
+            autoscaling_config:
+              cpu_target: 60
+              max_nodes: 2
+              min_nodes: 1
+            cluster_id: cluster2
+            zone: us-west1-a
+          zone3:
+            autoscaling_config:
+              cpu_target: 60
+              max_nodes: 2
+              min_nodes: 1
+            cluster_id: cluster3
+            zone: us-central1-c
       - name: labels
         description: labels associated to the Bigtable instance.
         varType: map(string)
@@ -82,8 +103,13 @@ spec:
           map(object({
               table_name              = string
               split_keys              = optional(list(string))
-              deletion_protection     = optional(string)
-              change_stream_retention = optional(number)
+              deletion_protection     = optional(string, "PROTECTED")
+              change_stream_retention = optional(string, "0s")
+              automated_backup_policy = optional(object({
+                retention_period = string
+                frequency        = string
+              }))
+
               column_family = optional(map(object({
                 family = string
                 }))
