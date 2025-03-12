@@ -100,8 +100,8 @@ spec:
       - name: table_ids
         description: List of table being provisioned
         type:
-          - tuple
-          - - string
+          - list
+          - string
   requirements:
     roles:
       - level: Project
