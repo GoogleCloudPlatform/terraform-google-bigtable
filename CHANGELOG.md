@@ -8,6 +8,13 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.2.1](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.2.0...v0.2.1) (2025-03-12)
+
+
+### Bug Fixes
+
+* Update metadata to change the type for table_ids output variable ([#23](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/23)) ([80a4cc7](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/80a4cc759fe87a0153d1196308d9e40c61910ce0))
+
 ## [0.2.0](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.1.0...v0.2.0) (2025-03-05)
 
 
