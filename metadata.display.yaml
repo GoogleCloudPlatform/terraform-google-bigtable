@@ -52,7 +52,7 @@ spec:
           altDefaults:
             - type: ALTERNATE_TYPE_DC
               table1:
-                table-name: table-1
+                table_name: table-1
         zones:
           name: zones
           title: Zones
