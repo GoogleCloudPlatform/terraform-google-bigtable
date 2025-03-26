@@ -58,3 +58,4 @@ spec:
         zones:
           name: zones
           title: Zones
+          level: 1
