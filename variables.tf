@@ -64,6 +64,45 @@ variable "zones" {
       storage_target = optional(number)
     }))
   }))
+
+  default = {
+    "zone1" = {
+      cluster_id = "cluster1"
+      zone       = "us-central1-a"
+      autoscaling_config = {
+        min_nodes  = 1
+        max_nodes  = 2
+        cpu_target = 60
+      }
+    }
+
+    "zone2" = {
+      cluster_id = "cluster2"
+      zone       = "us-west1-a"
+      autoscaling_config = {
+        min_nodes  = 1
+        max_nodes  = 2
+        cpu_target = 60
+      }
+    }
+
+    "zone3" = {
+      cluster_id = "cluster3"
+      zone       = "us-central1-c"
+      autoscaling_config = {
+        min_nodes  = 1
+        max_nodes  = 2
+        cpu_target = 60
+      }
+    }
+  }
+
+  validation {
+    condition = alltrue(flatten([
+      for k, v in var.zones : !((v.num_nodes == null && v.autoscaling_config == null) || (v.num_nodes != null && v.autoscaling_config != null))
+    ]))
+    error_message = "Set either num_nodes (or) autoscaling_config."
+  }
 }
 
 
@@ -79,8 +118,13 @@ variable "tables" {
   type = map(object({
     table_name              = string
     split_keys              = optional(list(string))
-    deletion_protection     = optional(string)
-    change_stream_retention = optional(number)
+    deletion_protection     = optional(string, "PROTECTED")
+    change_stream_retention = optional(string, "0s")
+    automated_backup_policy = optional(object({
+      retention_period = string
+      frequency        = string
+    }))
+
     column_family = optional(map(object({
       family = string
       }))
@@ -92,6 +136,13 @@ variable "tables" {
       for k, v in var.tables : (length(v.table_name) >= 1 && length(v.table_name) <= 50)
     ]))
     error_message = "table_name must be between 1 and 50."
+  }
+
+  validation {
+    condition = alltrue(flatten([
+      for k, v in var.tables : (v.deletion_protection == "PROTECTED" || v.deletion_protection == "UNPROTECTED")
+    ]))
+    error_message = "deletion_protection must be set to either PROTECTED or UNPROTECTED"
   }
   default = {}
 }
