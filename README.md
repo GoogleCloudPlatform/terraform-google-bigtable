@@ -15,7 +15,7 @@ Basic usage of this module is as follows:
 ```hcl
 module "bigtable" {
   source  = "terraform-google-modules/bigtable/google"
-  version = "~> 0.2"
+  version = "~> 0.3"
 
   project_id  = "<PROJECT ID>"
   bucket_name = "gcs-test-bucket"

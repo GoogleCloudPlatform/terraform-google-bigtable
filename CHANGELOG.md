@@ -8,6 +8,18 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.3.0](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.2.1...v0.3.0) (2025-03-26)
+
+
+### Features
+
+* Added recommended defaults for blueprint variables ([#20](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/20)) ([e2a5c82](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/e2a5c820d00d7e3c0be08a6ba86a091cb07823de))
+
+
+### Bug Fixes
+
+* Adding alternate defaults for tables ([#28](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/28)) ([dacf620](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/dacf6204cecf025fd3e6af6fd182446fa2a06055))
+
 ## [0.2.1](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.2.0...v0.2.1) (2025-03-12)
 
 
