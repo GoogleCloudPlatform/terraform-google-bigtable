@@ -48,6 +48,10 @@ spec:
         tables:
           name: tables
           title: Tables
+          level: 1
+          altDefaults:
+            - type: ALTERNATE_TYPE_DC
+              value: true
         zones:
           name: zones
           title: Zones
