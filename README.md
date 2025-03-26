@@ -31,7 +31,7 @@ Functional examples are included in the
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | deletion\_protection | Whether or not to allow Terraform to destroy the instance | `bool` | `true` | no |
-| display\_name | The human-readable display name of the Bigtable instance. Defaults to the instance name | `string` | n/a | yes |
+| display\_name | The human-readable display name of the Bigtable instance. Defaults to the instance name | `string` | `null` | no |
 | labels | labels associated to the Bigtable instance. | `map(string)` | `{}` | no |
 | name | The unique name of the Bigtable instance. | `string` | n/a | yes |
 | project\_id | The ID of the project in which the resource belongs | `string` | n/a | yes |

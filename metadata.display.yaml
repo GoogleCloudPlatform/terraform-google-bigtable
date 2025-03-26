@@ -33,6 +33,7 @@ spec:
         display_name:
           name: display_name
           title: Display Name
+          level: 1
         labels:
           name: labels
           title: Labels
@@ -48,6 +49,13 @@ spec:
         tables:
           name: tables
           title: Tables
+          level: 1
+          altDefaults:
+            - type: ALTERNATE_TYPE_DC
+              value:
+                table1:
+                  table_name: table-1
         zones:
           name: zones
           title: Zones
+          level: 1
