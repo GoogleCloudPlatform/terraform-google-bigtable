@@ -58,11 +58,3 @@ spec:
         zones:
           name: zones
           title: Zones
-          level: 1
-          altDefaults:
-            - type: ALTERNATE_TYPE_DC
-              value:
-                zone1:
-                  cluster_id: cluster1
-                  num_nodes: 2
-                  zone: us-central1-a
