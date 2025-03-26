@@ -42,22 +42,27 @@ module "bigtable" {
   }
   tables = {
     table1 = {
-      "table_name" = "test-table1"
+      table_name = "test-table1"
       split_keys   = ["a", "b", "c"]
-      "column_family" = {
+      column_family = {
         family1 = {
-          "family" = "first-family"
+          family = "first-family"
         }
         family2 = {
-          "family" = "second-family"
+          family = "second-family"
         }
       }
+      deletion_protection = "UNPROTECTED"
     }
+
     table2 = {
-      "table_name" = "test-table2"
-      table3 = {
-        "table_name" = "test-table3"
-      }
+      table_name = "test-table2"
+      deletion_protection = "UNPROTECTED"
+    }
+
+    table3 = {
+      table_name = "test-table3"
+      deletion_protection = "UNPROTECTED"
     }
   }
   deletion_protection = false
