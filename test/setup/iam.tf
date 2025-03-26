@@ -16,7 +16,11 @@
 
 locals {
   int_required_roles = [
-    "roles/owner"
+    "roles/bigtable.admin",
+    "roles/cloudkms.admin",
+    "roles/iam.serviceAccountAdmin",
+    "roles/serviceusage.serviceUsageAdmin",
+    "roles/resourcemanager.projectIamAdmin"
   ]
 }
 

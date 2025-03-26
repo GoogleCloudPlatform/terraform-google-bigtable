@@ -106,7 +106,11 @@ spec:
     roles:
       - level: Project
         roles:
-          - roles/owner
+          - roles/bigtable.admin
+          - roles/cloudkms.admin
+          - roles/iam.serviceAccountAdmin
+          - roles/serviceusage.serviceUsageAdmin
+          - roles/resourcemanager.projectIamAdmin
     services:
       - cloudresourcemanager.googleapis.com
       - storage-api.googleapis.com
