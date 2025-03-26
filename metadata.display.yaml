@@ -51,8 +51,9 @@ spec:
           level: 1
           altDefaults:
             - type: ALTERNATE_TYPE_DC
-              table1:
-                table_name: table-1
+              value:
+                -table1:
+                  table_name: table-1
         zones:
           name: zones
           title: Zones
