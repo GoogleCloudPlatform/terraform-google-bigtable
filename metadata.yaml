@@ -131,17 +131,17 @@ spec:
     roles:
       - level: Project
         roles:
-          - roles/bigtable.admin
           - roles/cloudkms.admin
           - roles/iam.serviceAccountAdmin
           - roles/serviceusage.serviceUsageAdmin
           - roles/resourcemanager.projectIamAdmin
+          - roles/bigtable.admin
     services:
-      - cloudresourcemanager.googleapis.com
-      - storage-api.googleapis.com
-      - serviceusage.googleapis.com
-      - bigtableadmin.googleapis.com
       - bigtable.googleapis.com
+      - bigtableadmin.googleapis.com
+      - cloudresourcemanager.googleapis.com
+      - serviceusage.googleapis.com
+      - storage-api.googleapis.com
     providerVersions:
       - source: hashicorp/google
         version: ">= 3.53, < 7"

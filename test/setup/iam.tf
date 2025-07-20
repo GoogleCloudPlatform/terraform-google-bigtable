@@ -15,13 +15,17 @@
  */
 
 locals {
-  int_required_roles = [
-    "roles/bigtable.admin",
-    "roles/cloudkms.admin",
-    "roles/iam.serviceAccountAdmin",
-    "roles/serviceusage.serviceUsageAdmin",
-    "roles/resourcemanager.projectIamAdmin"
-  ]
+  per_module_roles = {
+    root = [
+      "roles/bigtable.admin",
+      "roles/cloudkms.admin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  }
+
+  int_required_roles = tolist(toset(flatten(values(local.per_module_roles))))
 }
 
 resource "google_service_account" "int_test" {
