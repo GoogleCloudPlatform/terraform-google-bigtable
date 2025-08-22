@@ -43,7 +43,7 @@ module "bigtable" {
   tables = {
     table1 = {
       table_name = "test-table1"
-      split_keys   = ["a", "b", "c"]
+      split_keys = ["a", "b", "c"]
       column_family = {
         family1 = {
           family = "first-family"
@@ -56,12 +56,12 @@ module "bigtable" {
     }
 
     table2 = {
-      table_name = "test-table2"
+      table_name          = "test-table2"
       deletion_protection = "UNPROTECTED"
     }
 
     table3 = {
-      table_name = "test-table3"
+      table_name          = "test-table3"
       deletion_protection = "UNPROTECTED"
     }
   }
