@@ -48,6 +48,11 @@ spec:
         storage_type:
           name: storage_type
           title: Storage Type
+          enumValueLabels:
+            - label: SSD
+              value: SSD
+            - label: HDD
+              value: HDD
         tables:
           name: tables
           title: Tables
@@ -57,7 +62,56 @@ spec:
               value:
                 table1:
                   table_name: table-1
+          properties:
+            table_name:
+              name: table_name
+              title: Table Name
+              regexValidation: ^[A-Za-z0-9._-]{1,50}$
+              validation: Must be between 1 and 50 characters, and can contain only lowercase letters, numbers, hyphens, and underscores.
+            deletion_protection:
+              name: deletion_protection
+              title: Deletion Protection
+              enumValueLabels:
+                - label: PROTECTED
+                  value: PROTECTED
+                - label: UNPROTECTED
+                  value: UNPROTECTED
+            change_stream_retention:
+              name: change_stream_retention
+              title: Change Stream Retention
+              regexValidation: ^(0s|[1-9][0-9]*s|[1-5]?[0-9]m|[1-2]?[0-9]h|[1-7]d)$
+              validation: A string indicating the duration over which Change Stream data will be retained. Valid units are "s" for seconds, "m" for minutes, "h" for hours, and "d" for days. Must be at least 0s (0 seconds). The maximum duration is 7 days.
+            automated_backup_policy:
+              name: automated_backup_policy
+              title: Automated Backup Policy
+              properties:
+                retention_period:
+                  name: retention_period
+                  title: Retention Period
+                  regexValidation: "^(0|(?:[0-9]+h)?(?:[0-9]+m)?(?:[0-9]+s)?)$"
+                  validation: Must be "0" or a valid duration in the format "{h}h{m}m{s}s" (e.g., "72h0m0s"). Hours, minutes, and seconds are optional but must be in order
+                frequency:
+                  name: frequency
+                  title: Frequency
+                  regexValidation: "^(0|(?:[0-9]+h)?(?:[0-9]+m)?(?:[0-9]+s)?)$"
+                  validation: Must be "0" or a valid duration in the format "{h}h{m}m{s}s" (e.g., "72h0m0s"). Hours, minutes, and seconds are optional but must be in order
         zones:
           name: zones
           title: Zones
           level: 1
+          properties:
+            cluster_id:
+              name: cluster_id
+              title: Cluster ID
+              regexValidation: ^[a-z0-9-]{6,30}$
+              validation: Must be between 6 and 30 characters, and can only contain lowercase letters, numbers, and hyphens.
+            zone:
+              name: zone
+              title: Zone
+              regexValidation: ^[a-z]+(-[a-z0-9]+)+-[a-z]$
+              validation: Must be a valid google cloud zone.
+            kms_key_name:
+              name: kms_key_name
+              title: KMS Key Name
+              regexValidation: "^projects/[A-Za-z0-9_-]+/locations/[A-Za-z0-9_-]+/keyRings/[A-Za-z0-9_-]+/cryptoKeys/[A-Za-z0-9_-]+$"
+              validation: Must be a valid Cloud KMS key resource name in the format:projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
