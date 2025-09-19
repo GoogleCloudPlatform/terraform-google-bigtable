@@ -8,6 +8,18 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.4.0](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.3.1...v0.4.0) (2025-09-18)
+
+
+### Features
+
+* per module requirements configs for bigtable ([#35](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/35)) ([8152a79](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/8152a79b47fc87dbe1f6ea030d6852557197a4ba))
+
+
+### Bug Fixes
+
+* added missing validations ([#37](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/37)) ([81d7b51](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/81d7b51dbc181b3c06a99db99d2c802f2b55b636))
+
 ## [0.3.1](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.3.0...v0.3.1) (2025-05-22)
 
 
