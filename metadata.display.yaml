@@ -100,6 +100,15 @@ spec:
           title: Zones
           level: 1
           properties:
+            autoscaling_config:
+              name: autoscaling_config
+              title: Autoscaling Configuration
+              properties:
+                cpu_target:
+                  name: cpu_target
+                  title: CPU Target
+                  min: 10
+                  max: 80
             cluster_id:
               name: cluster_id
               title: Cluster ID
