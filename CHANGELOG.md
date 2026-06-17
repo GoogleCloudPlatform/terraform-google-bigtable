@@ -8,6 +8,13 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.5.0](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.4.1...v0.5.0) (2026-06-17)
+
+
+### Features
+
+* Update Google provider version constraint to &lt; 8 ([#44](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/44)) ([2d55e3d](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/2d55e3d764b9fbb938a14445a697109b0be2004d))
+
 ## [0.4.1](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.4.0...v0.4.1) (2025-09-30)
 
 
