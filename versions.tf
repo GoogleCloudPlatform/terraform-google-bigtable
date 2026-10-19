@@ -24,6 +24,6 @@ terraform {
   }
 
   provider_meta "google" {
-    module_name = "blueprints/terraform/bigtable/v0.5.0"
+    module_name = "blueprints/terraform/bigtable/v0.5.1"
   }
 }
