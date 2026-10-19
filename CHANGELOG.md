@@ -8,6 +8,13 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.5.1](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.5.0...v0.5.1) (2026-10-19)
+
+
+### Bug Fixes
+
+* populate null defaultValue in bigtable blueprint metadata ([#49](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/issues/49)) ([282dacb](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/commit/282dacb9d585970258e0df8fa6b0bf58af6f9e5f))
+
 ## [0.5.0](https://github.com/GoogleCloudPlatform/terraform-google-bigtable/compare/v0.4.1...v0.5.0) (2026-06-17)
 
 
